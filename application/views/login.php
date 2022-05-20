@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title></title>
+  <title>SKL 2022</title>
 </head>
 
 <body>
@@ -26,13 +26,17 @@
         <img src="<?= base_url() ?>assets/img/logo-smk.png" style="margin-top: 20px; margin-bottom: 10px" height="130px" alt="logo SMK Negeri 1 Kragilan">
         <h5 style="">SMK Negeri 1 Kragilan</h5>
         <h5 style="margin-bottom: 20px;">Download Surat Kelulusan Tahun 2022</h5>
+
+        <?= $this->session->flashdata('msg') ?>
+
+
       </div>
 
       <!-- Login Form -->
 
       <?= form_open('C_siswa/user_login'); ?>
-        <input type="text" id="login" class="fadeIn second" name="nisn_siswa" placeholder="NISN">
-        <input type="password" id="login" class="fadeIn second" name="password" placeholder="Password">
+        <input type="text" id="login" class="fadeIn second" name="nisn_siswa" placeholder="NISN" required>
+        <input type="password" id="login" class="fadeIn second" name="password" placeholder="Password" required>
         <input type="submit" class="fadeIn fourth" >
       <?= form_close() ?>
 

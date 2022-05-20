@@ -117,7 +117,7 @@ class C_login extends CI_Controller {
         redirect('C_masyarakat/dashboard');
         // echo "berhasil login";
       }else {
-        // $url = base_url('C_login/masyarakat');
+        $url = base_url('C_login/masyarakat');
         echo $this->session->set_flashdata('msg', 'Username atau password salah');
         echo 'error1';
         // redirect($url);
