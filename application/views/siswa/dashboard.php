@@ -35,31 +35,51 @@
     <?php
     foreach ($tampil as $row) {
     ?>
-<a style="margin-bottom: 20px;" type="button" class="btn btn-danger btn-sm" href="<?= base_url() ?>C_siswa/logout" >Logout</a>
-<a style="margin-bottom: 20px;" type="button" class="btn btn-info btn-sm" href="<?php echo site_url('C_siswa/cetak/'.$row->id_siswa); ?>" >Download Surat Kelulusan</a>
+    <a style="margin-bottom: 20px;" type="button" class="btn btn-danger btn-sm" href="<?= base_url() ?>C_siswa/logout" >Logout</a>
 
-    <table class="table table-bordered table-hover" id="domainsTable">
-        <tr>
-          <td>Nama</td>
-          <td>
-            : <?= $row->nama_siswa ?>
-          </td>
-        </tr>
-        <tr>
-          <td>Program Keahlian</td>
-          <td>
-            : <?= $row->program_keahlian ?>
-          </td>
-        </tr>
-        <tr>
-          <td>Status Kelulusan</td>
-          <td>
-            : <?= $row->status_kelulusan ?>
-          </td>
-        </tr>
+    <?php if ($row->status_kelulusan == "LULUS") { ?>
+      <a style="margin-bottom: 20px;" type="button" class="btn btn-success btn-sm" href="<?php echo site_url('C_siswa/cetak/'.$row->id_siswa); ?>" >Download Surat Kelulusan</a>
+    <?php }else { ?>
+      <p>Mohon untuk menghubungi Ketua Prodi, untuk info lebih lanjut tentang kelulusan</p>
+    <?php } ?>
 
-        <?php } ?>
+    <table class="table table-bordered">
+      <tr>
+        <td width="300px">Nama Peserta Didik</td>
+        <td>: <?= $row->nama_siswa ?></td>
+      </tr>
+      <tr>
+        <td>Tempat, Tanggal Lahir</td>
+        <td>: <?= $row->tempat_lahir; echo ", "; echo $row->tgl_lahir ?></td>
+      </tr>
+      <tr>
+        <td>Nama Orang Tua / Wali</td>
+        <td>: <?= $row->nama_org_tua ?></td>
+      </tr>
+      <tr>
+        <td>Nomor Induk Siswa</td>
+        <td>: <?= $row->nis_siswa ?></td>
+      </tr>
+      <tr>
+        <td>Nomor Induk Siswa Nasional</td>
+        <td>: <?= $row->nisn_siswa ?></td>
+      </tr>
+      <tr>
+        <td>Program Keahlian</td>
+        <td>: <?= $row->program_keahlian ?></td>
+      </tr>
+      <tr>
+        <td>Paket Keahlian</td>
+        <td>: <?= $row->paket_keahlian ?></td>
+      </tr>
+      <tr>
+        <td>Dinyatakan</td>
+        <td>
+          <b>: <?= $row->status_kelulusan ?></b>
+        </td>
+      </tr>
     </table>
+  <?php } ?>
   </div>
 
 

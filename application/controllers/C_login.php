@@ -7,7 +7,7 @@ class C_login extends CI_Controller {
 	{
 			parent::__construct();
 			$this->load->model('M_login');
-      $this->load->model('M_umkm');
+      $this->load->model('M_siswa');
 	}
 
 //Login User
@@ -16,142 +16,111 @@ class C_login extends CI_Controller {
     $this->load->view('login');
   }
 
-  public function user()
+  public function siswa()
   {
-    $this->load->view('user/index');
+    $this->load->view('login');
   }
 
-  public function user_login()
+  public function siswa_login()
   {
-    $username = htmlspecialchars($this->input->post('username', true), ENT_QUOTES);
+    $nisn_siswa = htmlspecialchars($this->input->post('nisn_siswa', true), ENT_QUOTES);
     $password = htmlspecialchars($this->input->post('password', true), ENT_QUOTES);
 
-    $cek_login = $this->M_login->user_login($username, $password);
+    $cek_login = $this->M_login->siswa_login($nisn_siswa, $password);
 
     if ($cek_login->num_rows() > 0) {
       $data = $cek_login->row_array();
 
-      if ($data['status']=='user') {
-        $this->session->set_userdata('user', true);
-        $this->session->set_userdata('ses_id', $data['id_user']);
-        $this->session->set_userdata('ses_username', $data['username']);
-        redirect('C_user/dashboard');
+      if ($data['status']=='siswa') {
+        $this->session->set_userdata('siswa', true);
+        $this->session->set_userdata('ses_id', $data['id_siswa']);
+        $this->session->set_userdata('ses_nisn', $data['nisn_siswa']);
+        redirect('C_siswa/dashboard');
 
-      }elseif ($data['status']=='pimpinan') {
-        $this->session->set_userdata('pimpinan', true);
-        $this->session->set_userdata('ses_id', $data['id_user']);
-        $this->session->set_userdata('ses_username', $data['username']);
-
-        redirect('C_pimpinan/dashboard');
+      // }elseif ($data['status']=='pimpinan') {
+      //   $this->session->set_userdata('pimpinan', true);
+      //   $this->session->set_userdata('ses_id', $data['id_user']);
+      //   $this->session->set_userdata('ses_username', $data['nisn_siswa']);
+      //
+      //   redirect('C_pimpinan/dashboard');
       }else {
-        $url = base_url('C_user');
-        echo $this->session->set_flashdata('msg', 'Username atau password salah');
+        $url = base_url('C_siswa');
+        echo $this->session->set_flashdata('msg', '
+
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          NISN atau Password Salah<br> Silahkan Login Kembali
+        </div>
+        ');
         redirect($url);
       }
 
     }
 
-    $this->session->set_flashdata('msg', 'Username atau password salah');
-    $url = base_url('C_user/index');
+    $this->session->set_flashdata('msg', '
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      NISN atau Password Salah<br> Silahkan Login Kembali
+    </div>
+    ');
+    $url = base_url('C_siswa');
     redirect($url);
   }
 
-
-//Login UMKM
-  public function umkm()
+  public function f()
   {
-    $this->load->view('umkm/index');
+    $this->load->view('admin/index');
   }
 
-  public function umkm_login()
+  public function admin_login()
   {
     $username = htmlspecialchars($this->input->post('username', true), ENT_QUOTES);
     $password = htmlspecialchars($this->input->post('password', true), ENT_QUOTES);
 
-    $cek_login = $this->M_umkm->umkm_login($username, $password);
+    $cek_login = $this->M_login->admin_login($username, $password);
 
     if ($cek_login->num_rows() > 0) {
       $data = $cek_login->row_array();
 
-      if ($data['status_umkm']=='aktif') {
-        $this->session->set_userdata('umkm', true);
-        $this->session->set_userdata('ses_id', $data['id_umkm']);
-        $this->session->set_userdata('ses_username', $data['username']);
-        redirect('C_umkm/dashboard');
+      if ($data['status']=='aktif') {
+        $this->session->set_userdata('aktif', true);
+        $this->session->set_userdata('ses_id', $data['id_admin']);
+        $this->session->set_userdata('ses_user', $data['username']);
+        redirect('C_admin/siswa_tampil');
+
 
       }else {
-        $url = base_url('C_umkm');
-        echo $this->session->set_flashdata('msg', 'Username atau password salah');
+        $url = base_url('C_login/admin_login');
+        echo $this->session->set_flashdata('msg', '
+
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          Username atau Password Salah<br> Silahkan Login Kembali
+        </div>
+        ');
         redirect($url);
       }
 
     }
 
-    $this->session->set_flashdata('msg', 'Username atau password salah');
-    $url = base_url('C_umkm/index');
+    $this->session->set_flashdata('msg', '
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      Username atau Password Salah<br> Silahkan Login Kembali
+    </div>
+    ');
+    $url = base_url('C_login/admin_login');
     redirect($url);
   }
 
-
-// login masyarakat
-  public function masyarakat()
-  {
-    $this->load->view('masyarakat/index');
-  }
-
-
-  public function masyarakat_login()
-  {
-    $username = htmlspecialchars($this->input->post('username', true), ENT_QUOTES);
-    $password = htmlspecialchars($this->input->post('password', true), ENT_QUOTES);
-
-    $cek_login = $this->M_login->masyarakat_login($username, $password);
-
-    if ($cek_login->num_rows() > 0) {
-      $data = $cek_login->row_array();
-
-      if ($data['status_masyarakat']=='aktif') {
-        $this->session->set_userdata('masyarakat', true);
-        $this->session->set_userdata('ses_id', $data['id_masyarakat']);
-        $this->session->set_userdata('ses_username', $data['username']);
-        redirect('C_masyarakat/dashboard');
-        // echo "berhasil login";
-      }else {
-        $url = base_url('C_login/masyarakat');
-        echo $this->session->set_flashdata('msg', 'Username atau password salah');
-        echo 'error1';
-        // redirect($url);
-      }
-
-    }
-
-    $this->session->set_flashdata('msg', 'Username atau password salah');
-    // echo 'error2';
-
-    $url = base_url('C_login/masyarakat');
-    redirect($url);
-  }
-
-
-  public function logout_umkm()
+  public function siswa_logout()
   {
     $this->session->sess_destroy();
     $url = base_url();
-    redirect('C_login/umkm');
+    redirect('C_siswa');
   }
 
-  public function logout_masyarakat()
+  public function admin_logout()
   {
     $this->session->sess_destroy();
     $url = base_url();
-    redirect('C_login/masyarakat');
-  }
-
-  public function logout_user()
-  {
-    $this->session->sess_destroy();
-    $url = base_url();
-    redirect('C_login/user');
+    redirect('C_login/f');
   }
 
 }

@@ -8,6 +8,12 @@ class C_siswa extends CI_Controller {
 			parent::__construct();
 			$this->load->model('M_login');
       $this->load->model('M_siswa');
+
+      // session login
+			if ($this->session->userdata('siswa') != true) {
+				$url = base_url('C_login/siswa');
+				redirect($url);
+			}
 	}
 
 //Login User
@@ -77,13 +83,10 @@ class C_siswa extends CI_Controller {
 
   public function cetak($ses_id)
   {
-    // $ses_id = $this->session->userdata('ses_id');
     $data['tampil'] = $this->M_siswa->dashboard($ses_id);
 
     $this->load->view('siswa/print', $data);
   }
-
-
 
   public function logout()
   {

@@ -34,24 +34,16 @@
 
       <!-- Login Form -->
 
-      <?= form_open('C_login/siswa_login'); ?>
-        <input type="text" id="login" class="fadeIn second" name="nisn_siswa" placeholder="NISN" required>
+      <?= form_open('C_login/admin_login'); ?>
+        <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username" required>
         <input type="password" id="login" class="fadeIn second" name="password" placeholder="Password" required>
         <input type="submit" class="fadeIn fourth" >
       <?= form_close() ?>
 
       <!-- Remind Passowrd -->
       <div id="formFooter">
-        <a onclick="lupa_pass()" class="underlineHover" href="#">Tidak Tau Password?</a>
-        <script>
-        function lupa_pass() {
-          alert("Untuk password sudah dibagikan ke wali kelas masing-masing.");
-        }
-        </script>
-
+        <a class="underlineHover" href="#">Forgot Password?</a>
       </div>
-
-
 
     </div>
   </div>
