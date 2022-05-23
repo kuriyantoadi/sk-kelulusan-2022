@@ -1,36 +1,56 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Surat Keterangan Lulus - SMKN 1 Kragilan</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="<?= base_url() ?>assets/login/css/bootstrap.min.css">
+  <script src="<?= base_url() ?>assets/login/js/bootstrap.min.js"></script>
+  <style>
+    .margin_p {
+      margin-left: 60px;
+      margin-right: 100px;
+    }
+    .pd_col {
+      padding-left: 5px;
+    }
+    .margin_tb{
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+<center>
+  <img src="<?= base_url() ?>/assets/img/cop-surat2.png" />
+</center>
+
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <center>
-          <h5 style="margin-top:  25px;"><b>TAHUN PELAJARAN 2021/2022</b></h5>
-        </center>
-        <center>
-          <h5><b>SMKN 1 KRAGILAN</b></h5>
-        </center>
-        <center>
-          <h5><b>Download File Surat Keputusan Kelulusan</b></h5>
-        </center>
-        <br>
-        <!-- font ganti jenis -->
-      </div>
+    <h5 style="margin-top:20px;" align='center'>
+      <u>
+        SURAT KETERANGAN LULUS
+      </u>
+    </h5>
+    <p align='center'>No. 422/1033/SMKN.1/2022</p>
 
-    </div>
-    <?= $this->session->flashdata('msg') ?>
+    <p class="margin_p">
+      Kepala SMK Negeri 1 Kragilan Selaku Ketua Penyelenggara Ujian Sekolah Tahun Pelajaran
+      2021/2022 Berdasarkan :
 
+      <br>1. Ketuntasan dari seluruh program pembelajaran pada kurikulum 2013 Revisi
+      <br>2. Kriteria Kelulusan dari Satuan Pendidikan sesuai dengan peraturan perundang-undangan
+      <br>3. Rapat Pleno Dewan Pendidik tentang Kelulusan pada tanggal 01 Mei 2020
+      <br>Menerangkan Bahwa :
+    </p>
 
     <?php
     foreach ($tampil as $row) {
     ?>
-    <a style="margin-bottom: 20px;" type="button" class="btn btn-warning btn-sm" href="<?= base_url() ?>C_admin/siswa_tampil" >Kembali</a>
 
-    <?php if ($row->status_kelulusan == "LULUS") { ?>
-      <a style="margin-bottom: 20px;" type="button" class="btn btn-success btn-sm" href="<?php echo site_url('C_admin/siswa_print/'.$row->id_siswa); ?>" >Download Surat Kelulusan</a>
-    <?php }else { ?>
-      <p>Mohon untuk menghubungi Ketua Prodi, untuk info lebih lanjut tentang kelulusan</p>
-    <?php } ?>
-
-    <table class="table table-bordered">
+    <table style="margin-left: 100px" border="0">
       <tr>
         <td width="300px">Nama Peserta Didik</td>
         <td>: <?= $row->nama_siswa ?></td>
@@ -66,11 +86,11 @@
         </td>
       </tr>
     </table>
+    <p class="margin_p">
+      Dengan Nilai Sebagai Berikut :
+    </p>
 
-
-    <h3 align='center'>Nilai Siswa</h3>
-
-    <table class="table table-bordered">
+    <table border="1" class="margin_tb">
       <tr>
         <th width="40px"><center>NO.</th>
         <th width="400px"><center>MATA PELAJARAN</th>
@@ -141,11 +161,7 @@
         <td class="pd_col">Dasar Program Keahlian</td>
         <td><center><?= $row->produktif ?></td>
       </tr>
-      <tr>
-        <td align='center'>4</td>
-        <td class="pd_col">Kompetensi Keahlian</td>
-        <td><center><?= $row->kompetensi_keahlian ?></td>
-      </tr>
+
       <tr>
         <th class="pd_col" colspan="2">Rata-Rata</th>
         <td ><center>
@@ -154,5 +170,17 @@
       </tr>
 
     </table>
+    <img width="200px" align="right" src="<?= base_url() ?>assets/img/ttd.png" style="margin-right:  80px;"/>
+
   <?php } ?>
-  </div>
+
+      </div>
+    </div>
+</div>
+</div>
+
+<script>window.print(); </script>
+
+
+  </body>
+</html>

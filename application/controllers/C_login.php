@@ -65,7 +65,7 @@ class C_login extends CI_Controller {
     redirect($url);
   }
 
-  public function f()
+  public function fa()
   {
     $this->load->view('admin/index');
   }
@@ -84,7 +84,7 @@ class C_login extends CI_Controller {
         $this->session->set_userdata('aktif', true);
         $this->session->set_userdata('ses_id', $data['id_admin']);
         $this->session->set_userdata('ses_user', $data['username']);
-        redirect('C_admin/siswa_tampil');
+        redirect('C_admin/siswa_tekno');
 
 
       }else {
@@ -120,7 +120,7 @@ class C_login extends CI_Controller {
   {
     $this->session->sess_destroy();
     $url = base_url();
-    redirect('C_login/f');
+    redirect('C_login/fa');
   }
 
 }
