@@ -93,9 +93,9 @@ class C_admin extends CI_Controller {
 		$sejindo = $this->input->post('sejindo');
 		$pjok = $this->input->post('pjok');
 		$simdig = $this->input->post('simdig');
-		$ipa = $this->input->post('ipa');
+		$kimia = $this->input->post('kimia');
+		$fisika = $this->input->post('fisika');
 		$produktif = $this->input->post('produktif');
-		$kompetensi_keahlian = $this->input->post('kompetensi_keahlian');
 		$rata_rata = $this->input->post('rata_rata');
 
 		$kode_siswa= array('id_siswa' => $id_siswa);
@@ -119,9 +119,9 @@ class C_admin extends CI_Controller {
 			'sejindo' => $sejindo,
 			'pjok' => $pjok,
 			'simdig' => $simdig,
-			'ipa' => $ipa,
+			'kimia' => $kimia,
+			'fisika' => $fisika,
 			'produktif' => $produktif,
-			'kompetensi_keahlian' => $kompetensi_keahlian,
 			'rata_rata' => $rata_rata
 
 		);

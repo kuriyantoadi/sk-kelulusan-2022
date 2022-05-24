@@ -10,13 +10,13 @@
   <style>
     .margin_p {
       margin-left: 60px;
-      margin-right: 100px;
+      margin-right: 80px;
     }
     .pd_col {
       padding-left: 5px;
     }
     .margin_tb{
-      margin-left: 100px;
+      margin-left: 150px;
       margin-right: 100px;
     }
   </style>
@@ -50,7 +50,7 @@
     foreach ($tampil as $row) {
     ?>
 
-    <table style="margin-left: 100px" border="0">
+    <table class="margin_tb" border="0">
       <tr>
         <td width="300px">Nama Peserta Didik</td>
         <td>: <?= $row->nama_siswa ?></td>
@@ -85,7 +85,7 @@
           <b>: <?= $row->status_kelulusan ?></b>
         </td>
       </tr>
-    </table>
+    </table><br>
     <p class="margin_p">
       Dengan Nilai Sebagai Berikut :
     </p>
@@ -174,7 +174,7 @@
       </tr>
 
     </table>
-    <img width="300px"  align="right" src="<?= base_url() ?>assets/img/ttd.png" style="margin-right:  150px; margin-top: 30px"/>
+    <img width="300px" align="right" src="<?= base_url() ?>assets/img/ttd.png" style="margin-right:  100px; margin-top: 50px"/>
 
   <?php } ?>
 
