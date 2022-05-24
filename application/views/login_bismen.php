@@ -40,7 +40,7 @@
         <input type="text" id="login" class="fadeIn second" name="nisn_siswa" placeholder="NISN" required>
         <input type="password" id="login" class="fadeIn second" name="password" placeholder="Password" required>
         <input type="submit" class="fadeIn fourth" >
-        <br><a type="button" class="btn btn-info" href="siswa_tekno" style="margin-bottom: 20px">Login TPM, TKR, TKJ dan RPL</a>
+        <br><a type="button" class="btn btn-info" href="<?= base_url() ?>C_login/siswa_tekno" style="margin-bottom: 20px">Login TPM, TKR, TKJ dan RPL</a>
       <?= form_close() ?>
 
       <!-- Remind Passowrd -->

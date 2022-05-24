@@ -39,7 +39,7 @@
         <input type="text" id="login" class="fadeIn second" name="nisn_siswa" placeholder="NISN" required>
         <input type="password" id="login" class="fadeIn second" name="password" placeholder="Password" required>
         <input type="submit" class="fadeIn fourth" >
-        <br><a type="button" class="btn btn-info" href="siswa_bismen" style="margin-bottom: 20px">Login AKL dan OTKP</a>
+        <br><a type="button" class="btn btn-info" href="<?= base_url() ?>C_login/siswa_bismen" style="margin-bottom: 20px">Login AKL dan OTKP</a>
 
       <?= form_close() ?>
 
