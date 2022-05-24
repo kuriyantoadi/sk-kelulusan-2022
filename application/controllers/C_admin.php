@@ -72,7 +72,7 @@ class C_admin extends CI_Controller {
 		$this->load->view('admin/print_tekno', $data);
 	}
 
-	public function siswa_edit_up()
+	public function siswa_edit_up_tekno()
 	{
 		$id_siswa = $this->input->post('id_siswa');
 		$nis_siswa = $this->input->post('nis_siswa');
@@ -252,7 +252,6 @@ class C_admin extends CI_Controller {
 			$simdig = $this->input->post('simdig');
 			$ipa = $this->input->post('ipa');
 			$produktif = $this->input->post('produktif');
-			$kompetensi_keahlian = $this->input->post('kompetensi_keahlian');
 			$rata_rata = $this->input->post('rata_rata');
 
 			$kode_siswa= array('id_siswa' => $id_siswa);
@@ -278,7 +277,6 @@ class C_admin extends CI_Controller {
 				'simdig' => $simdig,
 				'ipa' => $ipa,
 				'produktif' => $produktif,
-				'kompetensi_keahlian' => $kompetensi_keahlian,
 				'rata_rata' => $rata_rata
 
 			);
@@ -301,7 +299,7 @@ class C_admin extends CI_Controller {
 			$data['tampil'] = $this->M_admin->siswa_pass_bismen($id_siswa);
 
 			$this->load->view('template/header-admin', $data);
-			$this->load->view('admin/siswa_pass_tekno', $data);
+			$this->load->view('admin/siswa_pass_bismen', $data);
 			$this->load->view('template/footer-admin', $data);
 		}
 

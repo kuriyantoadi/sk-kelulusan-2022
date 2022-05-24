@@ -92,7 +92,7 @@ class M_admin extends CI_Model{
     $this->db->update('tb_siswa_bismen',$data_edit);
   }
 
-  public function siswa_print_bismen($id_siswa)
+  public function print_bismen($id_siswa)
   {
     $this->db->where('id_siswa', $id_siswa);
     $hasil = $this->db->get('tb_siswa_bismen')->result();

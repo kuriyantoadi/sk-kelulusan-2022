@@ -11,7 +11,7 @@ class C_siswa extends CI_Controller {
 
       // session login
 			if ($this->session->userdata('siswa') != true) {
-				$url = base_url('C_login/siswa');
+				$url = base_url('C_login');
 				redirect($url);
 			}
 	}
@@ -19,80 +19,55 @@ class C_siswa extends CI_Controller {
 //Login User
   public function index()
   {
-    $this->load->view('login');
+    $this->load->view('login_tekno');
   }
 
-  public function user()
-  {
-    $this->load->view('user/index');
-  }
-
-  public function user_login()
-  {
-    $nisn_siswa = htmlspecialchars($this->input->post('nisn_siswa', true), ENT_QUOTES);
-    $password = htmlspecialchars($this->input->post('password', true), ENT_QUOTES);
-
-    $cek_login = $this->M_login->user_login($nisn_siswa, $password);
-
-    if ($cek_login->num_rows() > 0) {
-      $data = $cek_login->row_array();
-
-      if ($data['status_kelulusan']=='lulus') {
-        $this->session->set_userdata('user', true);
-        $this->session->set_userdata('ses_id', $data['id_siswa']);
-        $this->session->set_userdata('ses_nisn', $data['nisn_siswa']);
-        redirect('C_siswa/dashboard');
-
-      // }elseif ($data['status']=='pimpinan') {
-      //   $this->session->set_userdata('pimpinan', true);
-      //   $this->session->set_userdata('ses_id', $data['id_user']);
-      //   $this->session->set_userdata('ses_username', $data['nisn_siswa']);
-      //
-      //   redirect('C_pimpinan/dashboard');
-      }else {
-        $url = base_url('C_siswa');
-        echo $this->session->set_flashdata('msg', '
-
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          NISN atau Password Salah<br> Silahkan Login Kembali
-        </div>
-        ');
-        redirect($url);
-      }
-
-    }
-
-    $this->session->set_flashdata('msg', '
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      NISN atau Password Salah<br> Silahkan Login Kembali
-    </div>
-    ');
-    $url = base_url('C_siswa');
-    redirect($url);
-  }
-
-
-//Login UMKM
-  public function dashboard()
+//Login Tekno
+  public function dashboard_tekno()
   {
     $ses_id = $this->session->userdata('ses_id');
-    $data['tampil'] = $this->M_siswa->dashboard($ses_id);
+    $data['tampil'] = $this->M_siswa->dashboard_tekno($ses_id);
 
-    $this->load->view('siswa/dashboard', $data);
+    $this->load->view('siswa_tekno/dashboard', $data);
   }
 
-  public function cetak($ses_id)
+  public function cetak_tekno($ses_id)
   {
-    $data['tampil'] = $this->M_siswa->dashboard($ses_id);
+    $data['tampil'] = $this->M_siswa->dashboard_tekno($ses_id);
 
-    $this->load->view('siswa/print', $data);
+    $this->load->view('siswa_tekno/print', $data);
   }
 
-  public function logout()
+  public function logout_tekno()
   {
     $this->session->sess_destroy();
     $url = base_url();
-    redirect('C_siswa');
+    redirect('C_login/login_tekno');
   }
+  //Login Tekno Akhir
+
+
+  //Login Bismen awal
+    public function dashboard_bismen()
+    {
+      $ses_id = $this->session->userdata('ses_id');
+      $data['tampil'] = $this->M_siswa->dashboard_bismen($ses_id);
+
+      $this->load->view('siswa_bismen/dashboard', $data);
+    }
+
+    public function cetak_bismen($ses_id)
+    {
+      $data['tampil'] = $this->M_siswa->dashboard_bismen($ses_id);
+
+      $this->load->view('siswa_bismen/print', $data);
+    }
+
+    public function logout_bismen()
+    {
+      $this->session->sess_destroy();
+      $url = base_url();
+      redirect('C_login/login_bismen');
+    }
 
 }

@@ -164,25 +164,26 @@
       </tr>
       <tr>
         <td align='center'>2</td>
-        <td class="pd_col">IPA</td>
+        <td class="pd_col">Fisika</td>
         <td>
-          <input class="form-control" type="text" name="ipa" value="<?= $row->ipa ?>" required>
+          <input class="form-control" type="text" name="fisika" value="<?= $row->fisika ?>" required>
         </td>
       </tr>
       <tr>
         <td align='center'>3</td>
-        <td class="pd_col">Dasar Program Keahlian</td>
+        <td class="pd_col">Kimia</td>
         <td>
-          <input class="form-control" type="text" name="produktif" value="<?= $row->produktif ?>" required>
+          <input class="form-control" type="text" name="kimia" value="<?= $row->kimia ?>" required>
         </td>
       </tr>
       <tr>
         <td align='center'>4</td>
-        <td class="pd_col">Kompetensi Keahlian</td>
+        <td class="pd_col">Produktif</td>
         <td>
-          <input class="form-control" type="text" name="kompetensi_keahlian" value="<?= $row->kompetensi_keahlian ?>" required>
+          <input class="form-control" type="text" name="produktif" value="<?= $row->produktif ?>" required>
         </td>
       </tr>
+
 
     </table>
 

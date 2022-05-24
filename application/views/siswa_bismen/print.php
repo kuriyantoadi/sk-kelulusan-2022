@@ -34,7 +34,7 @@
         SURAT KETERANGAN LULUS
       </u>
     </h5>
-    <p align='center'>No. 422 / 452.1 / Adm. Sek (revisi)</p>
+    <p align='center'>No. 422/1033/SMKN.1/2022</p>
 
     <p class="margin_p">
       Kepala SMK Negeri 1 Kragilan Selaku Ketua Penyelenggara Ujian Sekolah Tahun Pelajaran
@@ -161,11 +161,7 @@
         <td class="pd_col">Dasar Program Keahlian</td>
         <td><center><?= $row->produktif ?></td>
       </tr>
-      <tr>
-        <td align='center'>4</td>
-        <td class="pd_col">Kompetensi Keahlian</td>
-        <td><center><?= $row->kompentesi_keahlian ?></td>
-      </tr>
+
       <tr>
         <th class="pd_col" colspan="2">Rata-Rata</th>
         <td ><center>
@@ -174,7 +170,7 @@
       </tr>
 
     </table>
-    <img width="200px" align="right" src="../../images/stampel.png" style="margin-right:  80px;"/>
+    <img width="200px" align="right" src="<?= base_url() ?>assets/img/ttd.png" style="margin-right:  80px;"/>
 
   <?php } ?>
 

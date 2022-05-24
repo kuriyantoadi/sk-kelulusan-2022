@@ -10,7 +10,7 @@
     <a style="margin-bottom: 20px;" type="button" class="btn btn-danger btn-sm" href="<?= base_url() ?>C_admin/siswa_pass_bismen/<?= $row->id_siswa ?>" >Ganti Password</a>
 
     <table class="table table-bordered">
-      <?= form_open('C_admin/siswa_edit_up'); ?>
+      <?= form_open('C_admin/siswa_edit_up_bismen'); ?>
 
       <tr>
         <td width="300px">Nama Peserta Didik</td>
@@ -171,18 +171,12 @@
       </tr>
       <tr>
         <td align='center'>3</td>
-        <td class="pd_col">Dasar Program Keahlian</td>
+        <td class="pd_col">Produktif</td>
         <td>
           <input class="form-control" type="text" name="produktif" value="<?= $row->produktif ?>" required>
         </td>
       </tr>
-      <tr>
-        <td align='center'>4</td>
-        <td class="pd_col">Kompetensi Keahlian</td>
-        <td>
-          <input class="form-control" type="text" name="kompetensi_keahlian" value="<?= $row->kompetensi_keahlian ?>" required>
-        </td>
-      </tr>
+
 
     </table>
 
