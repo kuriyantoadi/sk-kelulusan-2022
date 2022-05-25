@@ -162,7 +162,7 @@ class C_login extends CI_Controller {
       Username atau Password Salah<br> Silahkan Login Kembali
     </div>
     ');
-    $url = base_url('C_login/admin_login');
+    $url = base_url('C_login/fa');
     redirect($url);
   }
 
