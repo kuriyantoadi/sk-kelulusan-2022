@@ -145,7 +145,7 @@ class C_login extends CI_Controller {
 
 
       }else {
-        $url = base_url('C_login/admin_login');
+        $url = base_url('C_login/fa');
         echo $this->session->set_flashdata('msg', '
 
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
