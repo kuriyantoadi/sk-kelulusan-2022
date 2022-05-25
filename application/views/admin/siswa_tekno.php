@@ -20,6 +20,12 @@
                         <center>Nama
                     </th>
                     <th>
+                        <center>NISN
+                    </th>
+                    <th>
+                        <center>Tanggal Lahir
+                    </th>
+                    <th>
                       <center>Kelas
                     </th>
                     <th>
@@ -38,6 +44,12 @@
                     </td>
                     <td>
                       <?= $row->nama_siswa ?>
+                    </td>
+                    <td>
+                      <?= $row->nisn_siswa ?>
+                    </td>
+                    <td>
+                      <?= $row->tgl_lahir ?>
                     </td>
                     <td>
                       <?= $row->kelas  ?>

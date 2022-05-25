@@ -45,7 +45,7 @@
 
     <table class="table table-bordered">
       <tr>
-        <td width="300px">Nama Peserta Didik</td>
+        <td>Nama Peserta Didik</td>
         <td>: <?= $row->nama_siswa ?></td>
       </tr>
       <tr>

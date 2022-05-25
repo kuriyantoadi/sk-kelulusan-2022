@@ -75,7 +75,7 @@
           <select class="form-control" name="status_kelulusan" required>
             <option value="<?= $row->status_kelulusan ?>">Pilihan Sebelumnya ( <?= $row->status_kelulusan ?>)</option>
             <option value="LULUS">LULUS</option>
-            <option value="Tidak Lulus">Tidak Lulus</option>
+            <option value="DITUNDA">DITUNDA</option>
           </select>
         </td>
       </tr>
