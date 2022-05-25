@@ -30,6 +30,9 @@
                       <center>Kelas
                     </th>
                     <th>
+                      <center>Kondisi
+                    </th>
+                    <th>
                         <center>Opsi
                     </th>
 
@@ -54,6 +57,9 @@
                     </td>
                     <td>
                       <?= $row->kelas  ?>
+                    </td>
+                    <td>
+                      <?= $row->status_kelulusan  ?>
                     </td>
                     <td>
                         <center>
