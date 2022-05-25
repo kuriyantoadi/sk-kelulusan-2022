@@ -158,7 +158,7 @@
       </tr>
       <tr>
         <td align='center'>3</td>
-        <td class="pd_col">Dasar Program Keahlian</td>
+        <td class="pd_col">Produktif</td>
         <td><center><?= $row->produktif ?></td>
       </tr>
 

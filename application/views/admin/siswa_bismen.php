@@ -21,7 +21,7 @@
                         <center>Nama
                     </th>
                     <th>
-                      <center>Kompetensi Keahlian
+                      <center>Kelas
                     </th>
                     <th>
                         <center>Opsi
@@ -41,7 +41,7 @@
                       <?= $row->nama_siswa ?>
                     </td>
                     <td>
-                      <?= $row->program_keahlian  ?>
+                      <?= $row->kelas  ?>
                     </td>
                     <td>
                         <center>
