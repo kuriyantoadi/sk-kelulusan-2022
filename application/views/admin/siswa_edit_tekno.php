@@ -52,7 +52,9 @@
       <tr>
         <td>Program Keahlian</td>
         <td>
-          <select class="form-control" name="program_keahlian" required>
+          <input class="form-control" type="text" name="program_keahlian" value="<?= $row->program_keahlian ?>"required>
+
+          <!-- <select class="form-control" name="program_keahlian" required>
             <option value="<?= $row->program_keahlian ?>">Pilihan Sebelumnya ( <?= $row->program_keahlian ?> )</option>
             <option value="Akuntansi dan Keuangan Lembaga">Akuntansi dan Keuangan Lembaga</option>
             <option value="Otomatisasi dan Tata Kelola Perkantoran">Otomatisasi dan Tata Kelola Perkantoran</option>
@@ -60,7 +62,7 @@
             <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
             <option value="Teknik Kendaraan Ringan">Teknik Kendaraan Ringan</option>
             <option value="Teknik Pemesinan">Teknik Pemesinan</option>
-          </select>
+          </select> -->
         </td>
       </tr>
       <tr>
