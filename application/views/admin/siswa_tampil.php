@@ -75,6 +75,7 @@
 
     </div>
 
+    <script src="<?= base_url() ?>assets/login/js/bootstrap.js"></script>
     <script src="<?= base_url() ?>assets/dataTable/jquery.js"></script>
     <script src="<?= base_url() ?>assets/dataTable/jquery.dataTables.min.js"></script>
     <script src="<?= base_url() ?>assets/dataTable/dataTables.bootstrap4.min.js"></script>
