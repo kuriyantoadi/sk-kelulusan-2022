@@ -187,6 +187,77 @@ class C_admin extends CI_Controller {
 			$this->load->view('admin/siswa_bismen', $data);
 		}
 
+		public function siswa_tambah()
+		{
+			$this->load->view('template/header-admin');
+			$this->load->view('admin/siswa_bismen', $data);
+		}
+
+		public function siswa_tambah_up()
+		{
+			$id_siswa = $this->input->post('id_siswa');
+			$nis_siswa = $this->input->post('nis_siswa');
+			$nisn_siswa = $this->input->post('nisn_siswa');
+			$nama_siswa = $this->input->post('nama_siswa');
+			$tempat_lahir = $this->input->post('tempat_lahir');
+			$tgl_lahir = $this->input->post('tgl_lahir');
+			$nama_org_tua = $this->input->post('nama_org_tua');
+			$program_keahlian = $this->input->post('program_keahlian');
+			$paket_keahlian = $this->input->post('paket_keahlian');
+			$status_kelulusan = $this->input->post('status_kelulusan');
+			$pai = $this->input->post('pai');
+			$pkn = $this->input->post('pkn');
+			$b_ind = $this->input->post('b_ind');
+			$mtk = $this->input->post('mtk');
+			$b_ing = $this->input->post('b_ing');
+			$senbud = $this->input->post('senbud');
+			$sejindo = $this->input->post('sejindo');
+			$pjok = $this->input->post('pjok');
+			$simdig = $this->input->post('simdig');
+			$ipa = $this->input->post('ipa');
+			$produktif = $this->input->post('produktif');
+			$rata_rata = $this->input->post('rata_rata');
+
+			$kode_siswa= array('id_siswa' => $id_siswa);
+
+			$data_edit = array(
+				'nama_siswa' => $nama_siswa,
+				'nis_siswa' => $nis_siswa,
+				'nisn_siswa' => $nisn_siswa,
+				'tempat_lahir' => $tempat_lahir,
+				'tgl_lahir' => $tgl_lahir,
+				'nama_org_tua' => $nama_org_tua,
+				'program_keahlian' => $program_keahlian,
+				'paket_keahlian' => $paket_keahlian,
+				'status_kelulusan' => $status_kelulusan,
+				'pai' => $pai,
+				'pkn' => $pkn,
+				'b_ind' => $b_ind,
+				'mtk' => $mtk,
+				'b_ing' => $b_ing,
+				'senbud' => $senbud,
+				'sejindo' => $sejindo,
+				'pjok' => $pjok,
+				'simdig' => $simdig,
+				'ipa' => $ipa,
+				'produktif' => $produktif,
+				'rata_rata' => $rata_rata
+
+			);
+
+			$this->M_admin->siswa_edit_up_bismen($data_edit, $kode_siswa);
+
+			$this->session->set_flashdata('msg', '
+							<div class="alert alert-primary alert-dismissible fade show" role="alert">
+								<strong>Edit data berhasil</strong>
+
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>');
+			redirect ('C_admin/siswa_bismen/'.$id_siswa);
+		}
+
 		public function siswa_hapus_bismen($id_siswa)
 	  {
 	    $id_siswa = array('id_siswa' => $id_siswa);
