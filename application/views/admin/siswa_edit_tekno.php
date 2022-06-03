@@ -185,6 +185,13 @@
           <input class="form-control" type="text" name="produktif" value="<?= $row->produktif ?>" required>
         </td>
       </tr>
+      <tr>
+        <td align='center'></td>
+        <td class="pd_col">Rata-rata</td>
+        <td>
+          <input class="form-control" type="text" name="rata_rata" value="<?= $row->rata_rata ?>" required>
+        </td>
+      </tr>
 
 
     </table>
