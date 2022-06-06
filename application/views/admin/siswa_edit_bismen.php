@@ -52,21 +52,21 @@
       <tr>
         <td>Program Keahlian</td>
         <td>
-          <select class="form-control" name="program_keahlian" required>
-            <option value="<?= $row->program_keahlian ?>">Pilihan Sebelumnya ( <?= $row->program_keahlian ?> )</option>
-            <option value="Akuntansi dan Keuangan Lembaga">Akuntansi dan Keuangan Lembaga</option>
-            <option value="Otomatisasi dan Tata Kelola Perkantoran">Otomatisasi dan Tata Kelola Perkantoran</option>
-            <option value="Teknik Komputer dan Jaringan">Teknik Komputer dan Jaringan</option>
-            <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
-            <option value="Teknik Kendaraan Ringan">Teknik Kendaraan Ringan</option>
-            <option value="Teknik Pemesinan">Teknik Pemesinan</option>
-          </select>
+          <input class="form-control" type="text" name="program_keahlian" value="<?= $row->program_keahlian ?>" required>
         </td>
       </tr>
       <tr>
         <td>Paket Keahlian</td>
         <td>
-          <input class="form-control" type="text" name="paket_keahlian" value="<?= $row->paket_keahlian ?>" required>
+          <select class="form-control" name="paket_keahlian" required>
+            <option value="<?= $row->paket_keahlian ?>">Pilihan Sebelumnya ( <?= $row->paket_keahlian ?> )</option>
+            <option value="AKUNTANSI DAN KEUANGAN LEMBAGA">AKUNTANSI DAN KEUANGAN LEMBAGA</option>
+            <option value="OTOMATISASI DAN TATA KELOLA PERKANTORAN">OTOMATISASI DAN TATA KELOLA PERKANTORAN</option>
+            <option value="TEKNIK KOMPUTER DAN JARINGAN">TEKNIK KOMPUTER DAN JARINGAN</option>
+            <option value="REKAYASA PERANGKAT LUNAK">REKAYASA PERANGKAT LUNAK</option>
+            <option value="TEKNIK KENDARAAN RINGAN">TEKNIK KENDARAAN RINGAN</option>
+            <option value="TEKNIK PEMESINAN">TEKNIK PEMESINAN</option>
+          </select>
         </td>
       </tr>
       <tr>

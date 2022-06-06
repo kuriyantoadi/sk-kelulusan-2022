@@ -42,7 +42,7 @@
 
       <br>1. Ketuntasan dari seluruh program pembelajaran pada kurikulum 2013 Revisi
       <br>2. Kriteria Kelulusan dari Satuan Pendidikan sesuai dengan peraturan perundang-undangan
-      <br>3. Rapat Pleno Dewan Pendidik tentang Kelulusan pada tanggal 01 Mei 2020
+      <br>3. Rapat Pleno Dewan Pendidik tentang Kelulusan pada tanggal 01 Mei 2022
       <br>Menerangkan Bahwa :
     </p>
 
